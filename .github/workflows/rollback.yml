@@ -1,0 +1,16 @@
+name: Hello World Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to rollback to (e.g., v1.0.0)'
+        required: true
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Rollback
+        run: echo "Rolling back to version ${{ github.event.inputs.version }}"
